@@ -1,16 +1,26 @@
-# React + Vite
+Battery Management System (BMS) Dashboard
+A full-stack web dashboard for battery monitoring, state-of-health (SOH) classification, location finding, and wallet demo features. Built with React + Vite (frontend) and Python FastAPI (MQTT + ML backend).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live ML demo (Hugging Face): https://huggingface.co/spaces/abdulmoeez380/battery-classifier
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Features
+Module	Description
+Map
+Find nearest charge points (OpenStreetMap dark map, or Google Maps if API key is set)
+Battery Status
+Device/browser battery metrics
+Battery Health SOH
+Cloud ML classifier (Hugging Face) + optional live MQTT stream with on-device models
+Wallet
+Demo wallet and transaction UI
+Tech stack
+Frontend: React 19, Vite, React Router, Recharts, Leaflet
+Backend: Python, FastAPI, WebSockets, Paho MQTT
+ML: scikit-learn (Random Forest, Gradient Boosting, Extra Trees)
+IoT: ESP32 → HiveMQ Cloud → Python API
+Quick start
+Requirements
+Node.js 18+
+Python 3.10+
+(Optional) Google Maps API key
+(Optional) ESP32 + HiveMQ for live MQTT data
