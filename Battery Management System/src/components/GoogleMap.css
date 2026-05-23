@@ -1,0 +1,303 @@
+.map-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.map-header {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-glow);
+}
+
+.location-info h2 {
+  margin: 0 0 1rem 0;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.location-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.location-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.location-item svg {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.nearest-location-banner {
+  background: var(--accent-soft);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  box-shadow: inset 0 0 30px rgba(0, 230, 118, 0.05);
+}
+
+.nearest-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px var(--accent-glow));
+}
+
+.nearest-info strong {
+  display: block;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.25rem;
+}
+
+.nearest-info p {
+  margin: 0.25rem 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.distance {
+  color: var(--accent) !important;
+  font-weight: 600;
+  font-size: 1rem !important;
+}
+
+.map-wrapper {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-glow);
+  min-height: 600px;
+}
+
+.osm-map {
+  width: 100%;
+  height: 600px;
+  background: var(--bg-deep);
+  z-index: 0;
+}
+
+.osm-map .leaflet-control-zoom a {
+  background: var(--bg-elevated) !important;
+  color: var(--accent) !important;
+  border-color: var(--border) !important;
+}
+
+.osm-map .leaflet-control-attribution {
+  background: rgba(6, 13, 9, 0.85) !important;
+  color: var(--text-dim) !important;
+  font-size: 10px;
+}
+
+.osm-map .leaflet-control-attribution a {
+  color: var(--text-muted) !important;
+}
+
+.osm-marker span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #021208;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.osm-marker-user span {
+  background: var(--accent);
+}
+
+.osm-marker-site span {
+  background: #2d5c42;
+  border-color: var(--border-bright);
+}
+
+.osm-marker-nearest span {
+  background: var(--warn);
+  box-shadow: 0 0 14px rgba(255, 193, 7, 0.5);
+}
+
+.map-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 3rem;
+  text-align: center;
+  box-shadow: var(--shadow-glow);
+  color: var(--text-muted);
+}
+
+.map-loading p {
+  color: var(--text);
+  margin-top: 1rem;
+}
+
+.spinner-large {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 20px var(--accent-soft);
+}
+
+.loading-hint {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+}
+
+.locations-list-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-glow);
+}
+
+.locations-list-panel h3 {
+  margin: 0 0 1rem 0;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.location-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.location-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--accent-soft);
+}
+
+.location-card.nearest {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  box-shadow: 0 0 24px rgba(0, 230, 118, 0.12);
+}
+
+.location-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.location-card-header strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.nearest-badge {
+  background: linear-gradient(135deg, var(--accent-dim) 0%, var(--accent) 100%);
+  color: #021208;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.location-card p {
+  margin: 0.25rem 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.distance-text {
+  color: var(--accent) !important;
+  font-weight: 600;
+  margin-top: 0.5rem !important;
+}
+
+.marker-popup {
+  text-align: center;
+  min-width: 200px;
+  padding: 0.25rem;
+}
+
+.marker-popup strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #00c853;
+  font-size: 1rem;
+}
+
+.marker-popup p {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+  color: #334;
+}
+
+.nearest-indicator {
+  color: var(--warn) !important;
+  font-weight: 600;
+  margin-top: 0.5rem !important;
+}
+
+.distance-info {
+  color: #00c853 !important;
+  font-weight: 600;
+  margin-top: 0.5rem !important;
+}
+
+@media (max-width: 768px) {
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-wrapper {
+    min-height: 400px;
+  }
+
+  .nearest-location-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

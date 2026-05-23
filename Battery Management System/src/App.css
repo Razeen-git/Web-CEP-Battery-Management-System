@@ -1,0 +1,49 @@
+.route-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.route-container > * {
+  animation: pageTransition 0.35s ease-out;
+}
+
+@keyframes pageTransition {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.map-section {
+  margin-bottom: 2rem;
+  min-height: 600px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-glow);
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .btn-nav {
+    flex: 1;
+    min-width: calc(50% - 0.25rem);
+  }
+
+  .app-main {
+    padding: 1rem;
+  }
+}
